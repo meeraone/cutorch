@@ -880,6 +880,12 @@ for k, Tensor_ in pairs(handledTypenames) do
 	    {name=real}}
     )
 
+    wrap("scatterAdd",
+      cname("scatterAdd"),
+        {{name=Tensor, returned=true},
+         {name="index"},
+         {name='CudaLongTensor'},
+         {name=Tensor}})
     wrap("sort",
          cname("sort"),
          {{name=Tensor, default=true, returned=true},
@@ -1639,6 +1645,12 @@ wrap("scatter",
 	{name=real}}
 )
 
+wrap("scatterAdd",
+  cname("scatterAdd"),
+    {{name=Tensor, returned=true},
+     {name="index"},
+     {name='CudaLongTensor'},
+     {name=Tensor}})
 wrap("sort",
      cname("sort"),
      {{name=Tensor, default=true, returned=true},
